@@ -6,25 +6,18 @@ Console.WriteLine("input number: ");
 int b = int.Parse(Console.ReadLine());
 Console.WriteLine("input number: ");
 int c = int.Parse(Console.ReadLine());
-int max;
 
-if(a>b)
-{
-    if(a>c)
-    {
-        Console.Write("max = ");
-        Console.WriteLine(a);
-    }
+if(a>b && b>c)
+{ 
+    Console.Write("max = " + a);
 }
 
 else if (b>c)
 {
-    Console.Write("max = ");
-    Console.WriteLine(b);
+    Console.Write("max = " + b);
 } 
 
 else 
 {
-    Console.Write("max = ");
-    Console.WriteLine(c);
+    Console.Write("max = " + c);
 }
