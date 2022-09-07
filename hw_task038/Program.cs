@@ -3,9 +3,7 @@
 
 int iMax = 0;
 int iMin = 0;
-
 double result = 0;
-
 
 double[] array = new double[5];
 for (int i = 0; i < array.Length; i++)
@@ -26,9 +24,5 @@ for (int i = 0; i < array.Length; i++)
     }
     result = array[iMax] - array[iMin];
 }
-
-
-
-
 
 Console.Write(" -> " + result);
