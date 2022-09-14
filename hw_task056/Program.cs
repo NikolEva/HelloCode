@@ -1,4 +1,4 @@
-﻿// задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива
+﻿// задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
@@ -28,27 +28,35 @@ void PrintArray(int[,] array)
 Console.Write("введите количество строк: ");
 int rows = int.Parse(Console.ReadLine());
 
-Console.Write("введите количество столбцов: ");
+Console.Write("введите количество столбиков: ");
 int columns = int.Parse(Console.ReadLine());
 
 int[,] array = GetArray(rows, columns, 0, 10);
 PrintArray(array);
-
-Console.WriteLine();
-
-for (int k = 0; k < rows; k++)    //пузырьковая сортировка для двумерного массива
+int sum = 0;
+for (int i = 0; i < 1; i++)
 {
-    for (int i = 0; i < rows; i++)
+    for (int j = 0; j < columns; j++)
     {
-        for (int j = 1; j < columns; j++)
-        {
-            if(array[k, j] > array[k, j - 1])
-            {
-                int temp = array[k, j];
-                array[k, j] = array[k, j - 1];
-                array[k, j - 1] = temp;
-            }
-        }
+        sum = sum + array[i, j];
     }
 }
-PrintArray(array);
+
+int minSum = sum;
+int iMin = 0;
+for (int i = 1; i < rows; i++)
+{
+    sum = 0;
+    for (int j = 0; j < columns; j++)
+    {
+        sum = sum + array[i, j];
+    }
+    if(sum < minSum)
+    {
+        iMin = i;
+        minSum = sum;
+    }
+}
+
+Console.WriteLine(iMin + " строка с наименьшей суммой элементов");
+
