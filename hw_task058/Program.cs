@@ -34,8 +34,6 @@ int columns = int.Parse(Console.ReadLine());
 Console.Write("введите количество столбцов у второй матрицы: ");
 int columns1 = int.Parse(Console.ReadLine());
 
-
-
 int[,] array1 = GetArray(rows, columns, 0, 10);
 PrintArray(array1);
 

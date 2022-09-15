@@ -9,9 +9,9 @@ int y = int.Parse(Console.ReadLine());
 Console.Write("введите глубину куба ");
 int z = int.Parse(Console.ReadLine());
 
-int[,,] GetArray(int m, int n, int p, int minValue, int maxValue)
+int[,,] GetArray(int m, int n, int p, int minValue, int maxValue) // функция генерирует трехмерный массив неповторяющихся!!! чисел
 {
-    int[] temp = new int[m * n * p];
+    int[] temp = new int[m * n * p]; // сначала генерируем одномерный массив с неповторяющимися числами
     int num;
     for (int i = 0; i < temp.GetLength(0); i++)
     {
@@ -32,7 +32,7 @@ int[,,] GetArray(int m, int n, int p, int minValue, int maxValue)
         }
     }
 
-    int count = 0;
+    int count = 0; // а теперь из одномерного массива с неповторяющимися числами формируем трехмерный массив
     int[,,] result = new int[m, n, p];
     for (int i = 0; i < m; i++)
     {
